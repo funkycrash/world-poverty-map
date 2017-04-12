@@ -1,5 +1,4 @@
-# world poverty map
-World Poverty map
+# World Poverty Gap ($1.90/day) Per Country Through Time
 
 I worked on poverty data and created a visualization of the evolution of Poverty ($1.90/day definition) per country.
 
