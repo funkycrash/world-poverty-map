@@ -255,7 +255,6 @@ function drawMap(world) {
       .attr("id", function(d) { return "code_" + d.properties.id; }, true)  // give each a unique id for access later
       .attr("d", path); // create them using the svg path generator defined above
 
-    // var dataRange = getDataRange(); // get the min/max values from the current year's range of data values
     d3.selectAll('.country') // select all the countries
     .attr('fill', function(d) {
         if (d.properties[attributeArray[currentAttribute]] == 0) {          
@@ -271,7 +270,6 @@ function drawMap(world) {
 
 function sequenceMap() {
   
-    // var dataRange = getDataRange(); // get the min/max values from the current year's range of data values
     d3.selectAll('.country').transition()  //select all the countries and prepare for a transition to new values
       .duration(750)
       .attr('fill', function(d) {
@@ -298,23 +296,6 @@ function getColor(valueIn, valuesIn) {
   return color(valueIn);  // return that number to the caller
 }
 
-function getDataRange() {
-  // function loops through all the data values from the current data attribute
-  // and returns the min and max values
-
-  var min = Infinity, max = -Infinity;  
-  d3.selectAll('.country')
-    .each(function(d,i) {
-      var currentValue = d.properties[attributeArray[currentAttribute]];
-      if(currentValue <= min && currentValue != -99 && currentValue != 'undefined') {
-        min = currentValue;
-      }
-      if(currentValue >= max && currentValue != -99 && currentValue != 'undefined') {
-        max = currentValue;
-      }
-  });
-  return [min,max];  //boomsauce
-}
 
 function animateMap() {
 
